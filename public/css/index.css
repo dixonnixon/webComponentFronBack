@@ -1,0 +1,19 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div.container {
+    display: grid;
+    height: calc(100vh - 20px);
+    margin: 5px;
+}
+
+/* тут будут описания глобальных стилей + описание lightDOM */
+div[slot="cards"] {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    background-color: darkgray;
+    justify-content: space-around;
+}
