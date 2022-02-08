@@ -3,15 +3,21 @@ namespace sys;
 
 class UniversalConnect implements IConnectInfo
 {
-	private static $server = IConnectInfo::HOST;
-	private static $currentDB = IConnectInfo::DBNAME;
-	private static $user = IConnectInfo::UNAME;
-	private static $pass = IConnectInfo::PW;
-	private static $port = IConnectInfo::PORT;
+	private static $server;      
+	private static $currentDB;   
+	private static $user;        
+	private static $pass;        
+	private static $port;        
 	private static $hookup;
 	
 	public static function doConnect($test) {
-        var_dump($_ENV);
+        // var_dump($_ENV);
+        self::$server= $_ENV['DBHOST'];
+        self::$currentDB = $_ENV['DBNAME'];
+        self::$user = $_ENV['UNAME'];
+        self::$pass = $_ENV['PW'];
+        self::$port = $_ENV['PORT'];
+        
 		try {
 			// $options = array(
 				// \PDO::ATTR_PERSISTENT => true,
