@@ -10,6 +10,7 @@ export default class Model{
      */
 
     getCards() {
+        
         if(this.role.getName() == 'editor') {
             return new Promise((res) => {
                 res([

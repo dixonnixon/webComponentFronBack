@@ -8,8 +8,8 @@ function Role(name) {
     this.getName = () => this.name;
 }
 
-// let role = new Role('editor');
-let role = new Role('sc');
+let role = new Role('editor');
+// let role = new Role('sc');
 
 export class App {
     constructor(url) {

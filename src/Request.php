@@ -1,15 +1,12 @@
 <?php
 namespace DomainModel;
 
-
-
 class Request {
     private $request = [];
 
-    public function __construct($method=null, $server=null) 
+    public function __construct($method=null, $server=null, $param=[]) 
     {
-        $this->request = $this->initFromHttp();
-        // var_dump($this->request);
+        $this->request = $this->initFromHttp($param);
         if(!$method) {
             $method = $_SERVER["REQUEST_METHOD"];
         }
@@ -29,12 +26,12 @@ class Request {
         return $this->server;
     }
 
-    private function initFromHttp() 
+    private function initFromHttp($param=[]) 
     {
         if (!empty($_POST)) return $_POST;
         if (!empty($_GET))  return $_GET;
         if (!empty($_PUT))  return $_PUT;
-        return array();
+        return $param;
     }
 
     function getParameters()
