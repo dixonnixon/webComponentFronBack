@@ -14,7 +14,7 @@ export default class Role {
 
     get(aUser, cb) {
         this.dataContext.get(aUser.getId()).then((aRole) => {
-            this.role = cb(new Role(aRole));
+            this.role = cb(new Model(aRole));
         });
     }
     insert() {}

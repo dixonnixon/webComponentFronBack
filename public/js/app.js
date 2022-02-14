@@ -18,6 +18,8 @@ export class App {
         this.model = new Model(role);
 
         this.view.beforeRenderEvent.addListener(async (aPage) => {
+            console.log(this.,);
+            
             const res = await fetch(this.url + 'public/files/templates/' 
                 + role.getName() + '/' + aPage + 'templates.html', {
                 method: "GET",
